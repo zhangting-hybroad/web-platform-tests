@@ -10,6 +10,7 @@
 <script>
 async_test(function(t)
 {
+    t.add_cleanup(() => document.exitFullscreen());
     var parent = document.getElementById("parent");
     trusted_request(t, parent);
     document.onfullscreenchange = t.step_func(function()

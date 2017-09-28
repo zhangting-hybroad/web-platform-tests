@@ -8,6 +8,7 @@
 <script>
 async_test(function(t)
 {
+    t.add_cleanup(() => document.exitFullscreen());
     var single = document.getElementById("single");
     document.onfullscreenchange = t.step_func(function(event)
     {
