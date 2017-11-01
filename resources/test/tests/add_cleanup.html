@@ -42,14 +42,14 @@ async_test(function(t) {
   log_async = "";
   t.add_cleanup(function() { log_async += "1"; });
 
-  setTimeout(t.step_func(function() {
+  t.step_timeout(function() {
     t.add_cleanup(function() {
       log_async += "2";
       complete();
     });
     log_async += "0";
     t.done();
-  }), 0);
+  }, 0);
 }, "probe asynchronous");
 </script>
 <script type="text/json" id="expected">
