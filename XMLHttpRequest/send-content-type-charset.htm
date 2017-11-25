@@ -83,6 +83,22 @@
         "text/plain;charset=UTF-8",
         "No content type set, give MIME and charset"
       )
+      request(
+        "text/plain;charset= utf-8",
+        "text/plain;charset= utf-8",
+        "charset with space")
+      request(
+        'text/plain;charset="utf-8"',
+        'text/plain;charset="utf-8"',
+        "charset in double quotes")
+      request(
+        'text/plain;charset=" utf-8"',
+        'text/plain;charset=" utf-8"',
+        "charset in double quotes with space")
+      request(
+        'text/plain;charset="u\\t\\f-8"',
+        'text/plain;charset="u\\t\\f-8"',
+        "charset in double quotes with backslashes")
     </script>
   </body>
 </html>
