@@ -40,7 +40,7 @@
       )
       request(
         "text/plain;charset=utf-8",
-        "text/plain;charset=utf-8",
+        "text/plain;charset=UTF-8",
         "Correct text/plain MIME with charset"
       )
       request(
@@ -65,7 +65,7 @@
       )
       request(
         "text/plain;charset=utf-8;charset=waddup",
-        "text/plain;charset=utf-8",
+        "text/plain;charset=UTF-8",
         "charset given but wrong, fix it (known MIME, bogus charset)"
       )
       request(
@@ -85,19 +85,19 @@
       )
       request(
         "text/plain;charset= utf-8",
-        "text/plain;charset= utf-8",
+        "text/plain;charset=UTF-8",
         "charset with space")
       request(
-        'text/plain;charset="utf-8"',
-        'text/plain;charset="utf-8"',
+        "text/plain;charset=\"utf-8\"",
+        "text/plain;charset=UTF-8",
         "charset in double quotes")
       request(
-        'text/plain;charset=" utf-8"',
-        'text/plain;charset=" utf-8"',
+        "text/plain;charset=\" utf-8\"",
+        "text/plain;charset=UTF-8",
         "charset in double quotes with space")
       request(
-        'text/plain;charset="u\\t\\f-8"',
-        'text/plain;charset="u\\t\\f-8"',
+        "text/plain;charset=\"u\\t\\f-8\"",
+        "text/plain;charset=UTF-8",
         "charset in double quotes with backslashes")
     </script>
   </body>
