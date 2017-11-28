@@ -31,7 +31,9 @@ async_test(t => {
  "†/†",
  "¢/¢",
  "ÿ/ÿ",
- "a/"
+ "?/?",
+ "a/",
+ "/"
 ].forEach((type, index) => {
   async_test(t => {
     const client = new XMLHttpRequest();
@@ -49,7 +51,9 @@ async_test(t => {
 [
  ["HI/x;Test=test;charset=utf-8", "hi/x;test=test;charset=utf-8"],
  ["text/xml;charset=†", "text/xml"],
- ["text/html;", "text/html"]
+ ["text/html;", "text/html"],
+ ["x/x;?=x;charset=y", "x/x;charset=y"],
+ ["text/html;x=ÿ", "text/html;x=\"ÿ\""]
 ].forEach(([inputType, outputType], index) => {
   async_test(t => {
     const client = new XMLHttpRequest();
