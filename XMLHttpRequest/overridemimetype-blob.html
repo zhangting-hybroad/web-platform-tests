@@ -33,7 +33,9 @@ async_test(t => {
  "ÿ/ÿ",
  "?/?",
  "a/",
- "/"
+ "/",
+ " \t",
+ ""
 ].forEach((type, index) => {
   async_test(t => {
     const client = new XMLHttpRequest();
